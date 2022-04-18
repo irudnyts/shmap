@@ -10,11 +10,12 @@ generate_html <- function(paths) {
 get_images <- function(dir = "www/images/") {
     
     tibble(
-        path = list.files("www/images/", recursive = TRUE)
+        path = list.files(dir, recursive = TRUE)
     ) %>% 
         mutate(
             type = str_split(path, "/") %>% map_chr(pluck, 1),
-            id = str_split(path, "/") %>% map_chr(pluck, 2) %>% as.numeric()
+            id = str_split(path, "/") %>% map_chr(pluck, 2) %>% as.numeric(),
+            path = str_c("/images/", path)
         ) %>% 
         group_by(type, id) %>% 
         summarize(html = generate_html(path)) %>% 
