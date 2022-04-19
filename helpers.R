@@ -15,7 +15,7 @@ get_images <- function(dir = "www/images/") {
         mutate(
             type = str_split(path, "/") %>% map_chr(pluck, 1),
             id = str_split(path, "/") %>% map_chr(pluck, 2) %>% as.numeric(),
-            path = str_c("/images/", path)
+            path = str_c("images/", path)
         ) %>% 
         group_by(type, id) %>% 
         summarize(html = generate_html(path)) %>% 
