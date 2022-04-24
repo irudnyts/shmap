@@ -2,6 +2,7 @@ library(shiny)
 library(leaflet)
 library(tidyverse)
 library(shinymanager)
+library(shinythemes)
 
 source("helpers.R")
 source("creditentials.R")
@@ -14,8 +15,11 @@ dameges <- left_join(dameges, images)
 
 ui <- fillPage(
   includeCSS("www/style.css"),
-  leafletOutput("map", width = "100%", height = "100%")
-) %>% secure_app()
+  leafletOutput("map", width = "100%", height = "100%"), 
+  theme = shinytheme("slate")
+) %>% secure_app(
+  theme = shinytheme("slate")
+)
 
 server <- function(input, output, session) {
   
