@@ -21,3 +21,28 @@ body {
   width: auto;
   margin-right:22px;
 }
+
+/*Custom colors for leaflet clusters */ 
+.marker-custom-small {
+  color: rgb(0, 0, 0);
+  background-color: rgb(230, 230, 230);
+}
+.marker-custom-small div {
+  background-color: rgb(194, 197, 203);
+}
+
+.marker-custom-medium {
+  color: rgb(255, 255, 255);
+  background-color: rgb(168, 173, 184);
+}
+.marker-custom-medium div {
+  background-color: rgb(106, 115, 124);
+}
+
+.marker-custom-large {
+  color: rgb(255, 255, 255);
+  background-color: rgb(83, 91, 101);
+}
+.marker-custom-large div {
+  background-color: rgb(55, 61, 67);
+}

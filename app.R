@@ -25,10 +25,11 @@ server <- function(input, output, session) {
   
   output$map <- renderLeaflet({
     leaflet() %>%
-      addProviderTiles(providers$Stamen) %>% 
-      # addProviderTiles(providers$OpenStreetMap) %>% 
+      addProviderTiles(providers$Stamen) %>%
       addMarkers(
-        clusterOptions = markerClusterOptions(),
+        clusterOptions = markerClusterOptions(
+          iconCreateFunction=JS(set_clusters_class)
+        ),
         data = dameges, 
         popup = ~ html
       )

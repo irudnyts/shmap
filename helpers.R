@@ -31,3 +31,17 @@ get_dameges <- function() {
         longitude = c(36.32800614300417, 36.251797616496205, 36.372334765072665, 36.403840744034106, 36.285952067994614)
     )
 }
+
+set_clusters_class <- "function (cluster) {    
+    var childCount = cluster.getChildCount(); 
+    var c = ' marker-custom-';  
+    if (childCount < 4) {  
+      c += 'small';  
+    } else if (childCount < 10) {  
+      c += 'medium';  
+    } else { 
+      c += 'large';  
+    }    
+    return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
+
+  }"
