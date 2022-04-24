@@ -45,7 +45,8 @@ server <- function(input, output, session) {
       addProviderTiles(providers$Stamen) %>%
       addMarkers(
         clusterOptions = markerClusterOptions(
-          iconCreateFunction=JS(set_clusters_class)
+          iconCreateFunction = JS(set_clusters_class),
+          showCoverageOnHover = FALSE
         ),
         icon = list(
           iconUrl = 'pin.png',
