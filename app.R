@@ -30,8 +30,13 @@ server <- function(input, output, session) {
         clusterOptions = markerClusterOptions(
           iconCreateFunction=JS(set_clusters_class)
         ),
+        icon = list(
+          iconUrl = 'pin.png',
+          iconSize = c(60, 60)
+        ),
         data = dameges, 
-        popup = ~ html
+        popup = ~ html, 
+        
       )
   })
 }
